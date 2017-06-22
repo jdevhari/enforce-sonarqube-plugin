@@ -47,6 +47,8 @@ public class ApexGrammar {
         Declaration.create(grammarBuilder);
         
         SOQLExpressions.create(grammarBuilder);
+        
+        Triggers.create(grammarBuilder);
 
         grammarBuilder.rule(APEX_GRAMMAR).is(
         		grammarBuilder.firstOf(

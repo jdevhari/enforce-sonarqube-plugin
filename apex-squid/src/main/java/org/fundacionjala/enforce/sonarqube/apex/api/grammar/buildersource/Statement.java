@@ -246,7 +246,8 @@ public class Statement {
                 FOR,
                 grammarBuilder.firstOf(
                         FOR_EACH_LOOP,
-                        FOR_LOOP
+                        FOR_LOOP,
+                        TRIGGER_FOR_EACH_LOOP
                 )
         );
     }

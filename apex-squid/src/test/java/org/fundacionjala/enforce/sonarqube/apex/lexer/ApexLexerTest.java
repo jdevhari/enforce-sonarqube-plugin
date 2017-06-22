@@ -9,6 +9,7 @@ import com.google.common.base.Charsets;
 import com.sonar.sslr.api.Token;
 import com.sonar.sslr.impl.Lexer;
 import org.fundacionjala.enforce.sonarqube.apex.ApexConfiguration;
+import org.fundacionjala.enforce.sonarqube.apex.api.ApexKeyword;
 import org.fundacionjala.enforce.sonarqube.apex.api.ApexPunctuator;
 import org.fundacionjala.enforce.sonarqube.apex.api.ApexTokenType;
 import org.junit.Before;
@@ -86,14 +87,12 @@ public class ApexLexerTest {
     public void testVerifiesTokensWhenAVariableIsInstantiated() {
         file = new File("src/test/resources/lexer/InstanceVariable.cls");
         tokens = lexer.lex(file);
-        assertThat(tokens, hasOriginalToken("Account"));
-        assertThat(tokens, hasOriginalToken("a"));
-        assertThat(tokens, hasToken("=", ApexPunctuator.ASSIGN));
-        assertThat(tokens, hasOriginalToken("new"));
         assertThat(tokens, hasToken("(", ApexPunctuator.LPAREN));
         assertThat(tokens, hasOriginalToken("Account"));
+        assertThat(tokens, hasOriginalToken("a"));
+        assertThat(tokens, hasToken(":", ApexPunctuator.COLON));
+        assertThat(tokens, hasToken("TRIGGER", ApexKeyword.TRIGGER));
         assertThat(tokens, hasToken(")", ApexPunctuator.RPAREN));
-        assertThat(tokens, hasToken(";", ApexPunctuator.SEMICOLON));
     }
 
     @Test

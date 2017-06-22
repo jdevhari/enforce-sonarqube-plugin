@@ -52,6 +52,7 @@ public class Declaration {
         triggerTargetDeclaration(grammarBuilder);
         triggerEventsList(grammarBuilder);
         triggerEventDelaration(grammarBuilder);
+        triggerObjectDelaration(grammarBuilder);
     }
 
     
@@ -131,6 +132,14 @@ public class Declaration {
     							UNDELETE
 						)
 				)
+		);
+    }
+    
+    private static void triggerObjectDelaration(LexerfulGrammarBuilder grammarBuilder){
+    	grammarBuilder.rule(TRIGGER_OBJECT_DECLARATION).is(
+    					TRIGGER,
+    					DOT,
+    					NEW
 		);
     }
 

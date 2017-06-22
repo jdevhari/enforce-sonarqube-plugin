@@ -1,1 +1,1 @@
-Account a = new Account();
+for(Account a : Trigger.New){
