@@ -19,13 +19,13 @@ import org.sonar.squidbridge.checks.SquidCheck;
 import com.sonar.sslr.api.AstNode;
 import com.sonar.sslr.api.Grammar;
 
-@Rule(key = HardcodingIdsCheckInVariables.CHECK_KEY)
+@Rule(key = TriggerHardcodingIdsCheckInVariables.CHECK_KEY)
 public class TriggerHardcodingIdsCheckInVariables extends SquidCheck<Grammar> {
 
     /**
      * It is the code of the rule for the plugin.
      */
-    public static final String CHECK_KEY = "A1011";
+    public static final String CHECK_KEY = "A1029";
 
     /**
      * Stores a message template.
