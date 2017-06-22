@@ -4,6 +4,8 @@
  */
 package org.fundacionjala.enforce.sonarqube.apex.checks;
 
+import java.util.List;
+
 import org.fundacionjala.enforce.sonarqube.apex.checks.soql.SoqlLimitCheck;
 import org.fundacionjala.enforce.sonarqube.apex.checks.testrelated.AssertLiteralBooleanCheck;
 import org.fundacionjala.enforce.sonarqube.apex.checks.testrelated.AssertMessageCheck;
@@ -11,9 +13,16 @@ import org.fundacionjala.enforce.sonarqube.apex.checks.testrelated.SeeAllDataTes
 import org.fundacionjala.enforce.sonarqube.apex.checks.testrelated.TestClassCheck;
 import org.fundacionjala.enforce.sonarqube.apex.checks.testrelated.TestMethodInTestClassCheck;
 import org.fundacionjala.enforce.sonarqube.apex.checks.testrelated.TestMethodsParametersCheck;
-import org.fundacionjala.enforce.sonarqube.apex.checks.unofficial.*;
-
-import java.util.List;
+import org.fundacionjala.enforce.sonarqube.apex.checks.trigger.TriggerHardcodingIdsCheckInVariables;
+import org.fundacionjala.enforce.sonarqube.apex.checks.unofficial.ClassNameCheck;
+import org.fundacionjala.enforce.sonarqube.apex.checks.unofficial.DeprecatedMethodCheck;
+import org.fundacionjala.enforce.sonarqube.apex.checks.unofficial.DmlInConstructorCheck;
+import org.fundacionjala.enforce.sonarqube.apex.checks.unofficial.DmlInForCheck;
+import org.fundacionjala.enforce.sonarqube.apex.checks.unofficial.DmlInWhileCheck;
+import org.fundacionjala.enforce.sonarqube.apex.checks.unofficial.EmptyCatchCheck;
+import org.fundacionjala.enforce.sonarqube.apex.checks.unofficial.LineLengthCheck;
+import org.fundacionjala.enforce.sonarqube.apex.checks.unofficial.MethodNameCheck;
+import org.fundacionjala.enforce.sonarqube.apex.checks.unofficial.TestMethodCheck;
 
 import com.google.common.collect.ImmutableList;
 
@@ -61,6 +70,7 @@ public class CheckList {
                 TestMethodCheck.class,
                 AsyncMethodsCheck.class,
                 HardcodingIdsCheckInVariables.class,
+                TriggerHardcodingIdsCheckInVariables.class,
                 HardcodingIdsInMethodsAndConstructorsCheck.class,
                 TestClassCheck.class,
                 TestMethodInTestClassCheck.class,
